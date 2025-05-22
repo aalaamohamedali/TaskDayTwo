@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskDayTwo</title>
+</head>
+<body>
+   <h2>2. What is a Pull Request and Request? Difference between them?</h2>
+  <ul>
+    <li>Pull Request (PR):
+        A pull request is a GitHub feature used to notify others that you want to merge changes (from your branch or fork) into another branch (usually main) in a repository.</li>
+    <li>
+        Request (in general):
+    A request is just a generic term meaning you ask for something. A pull request is a type of request.
+    </li>
+  </ul>
+  <ul> ✅ Difference:
+    <li>
+        "Pull Request" is specific to GitHub for merging code.
+    </li>
+    <li>"Request" can be anything and is more general.
+
+    </li>
+  </ul>
+ <h2>4. What is the command to delete the branch "new-email"?</h2>
+<ul>
+    <li>Locally
+        <pre>
+            git branch -d new-email  # Use -D to force delete
+        </pre>
+    </li>
+    <li>
+        Remotely
+        <pre>
+            git push origin --delete new-email
+        </pre>
+    </li>
+
+</ul>
+<h2>5. What is the command to push the current repository to the remote origin?</h2>
+<p>
+    <pre>
+        git push origin HEAD
+    </pre>
+    OR: if you are on the main branch:
+    <pre>
+        git push origin main
+    </pre>
+</p>
+<h2>6. What is Git Rebase and how to use it?</h2>
+<ul>
+    <li>Git Rebase is used to reapply commits on top of another base tip. It helps to maintain a clean and linear history.
+        <pre>
+            # Rebase your current branch onto main
+            git checkout feature-branch
+            git rebase main
+
+        </pre>
+        <pre>
+            # Resolve conflicts manually, then:
+            git add .
+            git rebase --continue
+
+        </pre>
+    </li>
+</ul>
+<h2>7. What is the command to get all the change history of the remote repository "origin"?</h2>
+<p>
+    <pre>git fetch origin
+        git log origin/main --oneline
+        </pre>
+        Or to see all branches:
+        <pre>git log --all --oneline
+        </pre>
+</p>
+
+<h2>8. What is the command to show the differences between the current branch and the branch "new-email"?</h2>
+<p>
+    <pre>
+        git diff new-email</pre>
+    OR:
+    <pre>
+        git diff HEAD..new-email</pre>
+</p>
+
+<h2>9. What are Tags? Make five tags and release two of them</h2>
+<ul>Tags mark specific commits, usually for releases (e.g., v1.0.0).
+
+    <li>Create 5 tags:
+        <pre>
+            git tag v1.0.0
+            git tag v1.1.0
+            git tag v2.0.0
+            git tag beta
+            git tag stable
+            </pre>
+    </li>
+    <li>Push all tags:
+        <pre>
+            git push origin --tags
+        </pre>
+    </li>
+</ul>
+</body>
+</html>
